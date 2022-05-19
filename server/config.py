@@ -5,7 +5,7 @@ CONFIG = {
     # fetch FLAG_FORMAT from sploits' stdout.
     'TEAMS': {'Team #{}'.format(i): '10.0.0.{}'.format(i)
               for i in range(1, 29 + 1)},
-    'FLAG_FORMAT': r'[A-Z0-9]{31}=',
+    'FLAG_FORMAT': r'SAAR\{[A-Za-z0-9-_]{32}\}',
 
     # This configures how and where to submit flags.
     # The protocol must be a module in protocols/ directory.
@@ -30,8 +30,8 @@ CONFIG = {
     # every SUBMIT_PERIOD seconds. Flags received more than
     # FLAG_LIFETIME seconds ago will be skipped.
     'SUBMIT_FLAG_LIMIT': 50,
-    'SUBMIT_PERIOD': 5,
-    'FLAG_LIFETIME': 5 * 60,
+    'SUBMIT_PERIOD': 110,
+    'FLAG_LIFETIME': 10 * 120,
 
     # Password for the web interface. You can use it with any login.
     # This value will be excluded from the config before sending it to farm clients.
